@@ -1,30 +1,18 @@
-# Alex Mikeylov — Portfolio website
+# Alex Mikeylov — UI/UX Portfolio
 
-A responsive bilingual portfolio website (English by default, Russian toggle) built with plain HTML, CSS and JavaScript.
+A responsive bilingual (EN/RU) portfolio website. English is the default language.
 
-## Update on GitHub
-1. Keep your existing `assets` folder and its images.
-2. Replace `index.html`, `styles.css`, and `script.js` with the files from this package.
-3. Commit the changes to the `main` branch.
-4. GitHub Pages should redeploy automatically. Refresh the published site after a minute or two.
+## Files
+- `index.html` — page content and links
+- `styles.css` — layout and visual styles
+- `script.js` — language switcher
+- `assets/` — all images used by the site
 
-## Required existing image files
-The page references these paths inside `assets/`:
-- `profile-color.jpeg`
-- `profile-bw.png`
-- `nomo-case-study.png`
-- `crystal-icon.png`
-- `crystal-rush.png`
-- `wordout-icon.png`
-- `wordout-screens.png`
+## Publish with GitHub Pages
+1. Upload the **contents** of this folder to the root of your `resume-site` repository.
+2. Keep the `assets` folder and its filenames unchanged. In particular, the code expects `assets/profile-color.jpeg`, `assets/profile-bw.png`, `assets/nomo-case-study.png`, `assets/crystal-icon.png`, `assets/crystal-rush.png`, `assets/wordout-icon.png`, and `assets/wordout-screens.png`.
+3. Commit the changes.
+4. In Settings → Pages, choose **Deploy from a branch**, select `main` and `/(root)`, then Save.
+5. Open the published Pages URL and hard-refresh once if the old version is cached.
 
-Keep the filenames exactly as written, including capitalization. If your actual image names differ, rename them or update the corresponding `src` values in `index.html`.
-
-## Links already connected
-- Behance: https://www.behance.net/ef557b14
-- Figma: https://www.figma.com/design/ulmsws2ACwXjXcL3pft9FH/NOMO-Desighn?node-id=0-1&t=H2uy1FE50mJ0ncRR-1
-- Telegram: https://t.me/praidPOP
-- Email: swap110987@mial.ru
-- Crystal Rush and Wordout App Store pages
-
-The site states that 3 apps have been published, while featuring the two App Store links currently provided.
+The site links to Behance, Figma, Telegram, email, and the two supplied App Store pages. It mentions three published apps while featuring the two links provided.
