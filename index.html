@@ -1,173 +1,147 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Alex — UI/UX Designer with a background in iOS development. NOMO case study and published iOS apps." />
-  <title>Alex — UI/UX Designer</title>
-  <link rel="icon" href="assets/wordout-icon.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Alex Mikeylov — UI/UX designer with a background in iOS development.">
+  <title>Alex Mikeylov — UI/UX Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header" id="home">
-    <a class="brand" href="#home" aria-label="Home">Alex</a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#work">Work</a>
-      <a href="#apps">Apps</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-dark btn-small" href="#contact">Download CV <span>↓</span></a>
-  </header>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Alex Mikeylov home">Alex<span>.</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#apps" data-i18n="navApps">Apps</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="languageToggle" type="button" aria-label="Switch language">RU</button>
+        <a class="button button-dark nav-cta" href="#contact" data-i18n="letsTalk">Let’s talk ↗</a>
+      </div>
+    </header>
 
-  <main>
-    <section class="hero section-shell reveal">
-      <div class="hero-copy">
-        <p class="eyebrow"><span></span> UI/UX DESIGNER</p>
-        <h1>Designing<br />meaningful<br />mobile experiences.</h1>
-        <p class="hero-text">UI/UX-дизайнер с опытом разработки мобильных приложений на Swift. Создаю понятные интерфейсы и понимаю, как превратить дизайн в работающий продукт.</p>
-        <div class="hero-actions">
-          <a class="btn btn-dark" href="#work">View my work <span>→</span></a>
-          <a class="btn btn-light" href="#about">About me</a>
-        </div>
-        <div class="stats">
-          <div><strong>2</strong><span>Apps on<br />App Store</span></div>
-          <div><strong>1</strong><span>UI/UX<br />Case Study</span></div>
-          <div><strong>Swift</strong><span>iOS development<br />background</span></div>
-        </div>
-      </div>
-      <div class="hero-photo-wrap">
-        <div class="hero-glow"></div>
-        <img class="hero-photo" src="assets/profile-color.jpeg" alt="Alex" />
-        <div class="scribble">Good<br />People<br />Better days</div>
-      </div>
-    </section>
-
-    <section class="featured section-shell reveal" id="work">
-      <div class="featured-copy">
-        <p class="eyebrow"><span></span> FEATURED PROJECT</p>
-        <h2>NOMO</h2>
-        <h3>Social app for discovering events and meeting people nearby.</h3>
-        <p>A concept mobile application that helps people find local activities, connect with like-minded people and turn plans into real experiences.</p>
-        <div class="card-actions">
-          <a class="btn btn-dark" id="behanceLink" href="#" target="_blank" rel="noopener">View Case Study <span>→</span></a>
-          <a class="btn btn-light" id="figmaLink" href="#" target="_blank" rel="noopener">Open in Figma</a>
-        </div>
-      </div>
-      <div class="nomo-visual">
-        <img src="assets/nomo-case-study.png" alt="NOMO UI/UX case study" />
-      </div>
-    </section>
-
-    <section class="section-shell apps-section reveal" id="apps">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow"><span></span> APPS I'VE BUILT</p>
-          <h2>Real products.<br />Real experience.</h2>
-        </div>
-        <p>Before focusing on UI/UX design, I developed and released mobile applications for iOS. This experience helps me design with implementation, performance and product constraints in mind.</p>
-      </div>
-
-      <div class="app-grid">
-        <article class="app-card">
-          <div class="app-card-top">
-            <div class="app-title">
-              <img src="assets/wordout-icon.png" alt="Wordout icon" />
-              <div><h3>Wordout</h3><span>Game · iOS</span></div>
-            </div>
-            <span class="external">↗</span>
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span><span data-i18n="heroEyebrow">UI/UX DESIGNER · iOS DEVELOPER</span></p>
+          <h1 data-i18n="heroTitle">Designing meaningful<br>mobile experiences.</h1>
+          <p class="hero-lead" data-i18n="heroLead">I’m a UI/UX designer with a background in iOS development. I turn complex ideas into clear, thoughtful and engaging digital products.</p>
+          <div class="hero-buttons">
+            <a class="button button-dark" href="#work" data-i18n="viewWork">Explore my work ↘</a>
+            <a class="button button-light" href="mailto:swap110987@mial.ru" data-i18n="emailMe">Email me ↗</a>
           </div>
-          <p>Игра для компаний и друзей: объясняйте слова, играйте командами и проходите разные категории.</p>
-          <div class="app-media wordout-media"><img src="assets/wordout-screens.png" alt="Wordout app screens" /></div>
-          <a class="app-link" href="https://apps.apple.com/ru/app/wordout-%D0%B8%D0%B3%D1%80%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9/id6754257992" target="_blank" rel="noopener">App Store <span>→</span></a>
-        </article>
-
-        <article class="app-card">
-          <div class="app-card-top">
-            <div class="app-title">
-              <img class="app-icon" src="assets/crystal-icon.png" alt="Crystal Rush icon" />
-              <div><h3>Crystal Rush</h3><span>Game · iOS</span></div>
-            </div>
-            <span class="external">↗</span>
+          <div class="quick-stats">
+            <div><strong>3</strong><span data-i18n="statApps">Apps on App Store</span></div>
+            <div><strong>1</strong><span data-i18n="statCase">UI/UX case study</span></div>
+            <div><strong>Swift</strong><span data-i18n="statDev">iOS development</span></div>
           </div>
-          <p>Match-3 adventure with levels, tools, bonuses and progression designed around a fantasy journey.</p>
-          <div class="app-media crystal-media"><img src="assets/crystal-rush.png" alt="Crystal Rush App Store screenshots" /></div>
-          <a class="app-link" href="https://apps.apple.com/ru/app/crystal-rush-%D1%82%D1%80%D0%B8-%D0%B2-%D1%80%D1%8F%D0%B4/id6761733530" target="_blank" rel="noopener">App Store <span>→</span></a>
+        </div>
+        <div class="hero-visual">
+          <div class="portrait-halo"></div>
+          <img class="hero-portrait" src="assets/profile-color.jpeg" alt="Alex Mikeylov portrait">
+          <div class="floating-note note-top"><span class="note-mark">✳</span><span data-i18n="noteDesign">Design<br>with purpose</span></div>
+          <div class="floating-note note-bottom"><span class="note-mark">↗</span><span data-i18n="noteBuild">From idea<br>to product</span></div>
+          <div class="hero-caption"><span>Alex Mikeylov</span><span data-i18n="heroLocation">UI/UX · iOS</span></div>
+        </div>
+      </section>
+
+      <section class="featured section" id="work">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-i18n="featuredEyebrow">SELECTED WORK</p><h2 data-i18n="featuredTitle">Designing for real connections.</h2></div>
+          <span class="section-index">01 / 03</span>
+        </div>
+        <article class="featured-card">
+          <div class="featured-copy">
+            <p class="project-kicker">UI/UX · MOBILE APP · CONCEPT</p>
+            <h3>NOMO</h3>
+            <p data-i18n="nomoDesc">A social app concept that helps people discover local events, meet people with shared interests and make plans together.</p>
+            <div class="tag-row"><span>Product thinking</span><span>User flows</span><span>Design system</span><span>Prototype</span></div>
+            <div class="project-actions">
+              <a class="button button-dark" href="https://www.behance.net/ef557b14" target="_blank" rel="noopener noreferrer" data-i18n="viewCase">View case study ↗</a>
+              <a class="text-link" href="https://www.figma.com/design/ulmsws2ACwXjXcL3pft9FH/NOMO-Desighn?node-id=0-1&t=H2uy1FE50mJ0ncRR-1" target="_blank" rel="noopener noreferrer" data-i18n="openFigma">Open in Figma ↗</a>
+            </div>
+          </div>
+          <a class="featured-image-link" href="https://www.behance.net/ef557b14" target="_blank" rel="noopener noreferrer" aria-label="Open NOMO case study on Behance">
+            <img src="assets/nomo-case-study.png" alt="NOMO app case study presentation">
+            <span class="image-chip" data-i18n="conceptProject">Concept project ↗</span>
+          </a>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <section class="section-shell about-section reveal" id="about">
-      <div class="about-photo"><img src="assets/profile-bw.png" alt="Alex portrait" /></div>
-      <div class="about-copy">
-        <p class="eyebrow"><span></span> ABOUT ME</p>
-        <h2>Design. Build.<br />Improve.</h2>
-        <p><strong>UI/UX-дизайнер с опытом разработки мобильных приложений на Swift.</strong> До перехода в дизайн самостоятельно разрабатывал и выпускал приложения в App Store, поэтому понимаю полный цикл создания мобильного продукта — от идеи и архитектуры до реализации и публикации.</p>
-        <p>В разработке работал со <strong>Swift, UIKit и SpriteKit</strong>, занимался проектированием архитектуры, созданием интерфейсов, интеграцией сторонних SDK, локализацией, оптимизацией и исправлением ошибок. Есть опыт как самостоятельной разработки, так и работы в небольшой команде, где отвечал за техническую часть, игровую логику и интерфейс.</p>
-        <p>Сейчас развиваюсь в направлении <strong>UI/UX-дизайна</strong>. Проектирую мобильные интерфейсы в Figma, создаю пользовательские сценарии, дизайн-системы и интерактивные прототипы.</p>
-        <p><strong>Моя сильная сторона — сочетание дизайна и технического опыта:</strong> я понимаю не только то, как интерфейс должен выглядеть, но и как его реализовать в работающем продукте.</p>
-      </div>
-    </section>
-
-    <section class="section-shell skills-section reveal">
-      <div class="section-heading compact">
-        <div><p class="eyebrow"><span></span> SKILLS</p><h2>Tools &amp; strengths</h2></div>
-        <p>Design and development skills that I use to move from idea to a real mobile product.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill">Figma</div>
-        <div class="skill">Swift</div>
-        <div class="skill">UIKit</div>
-        <div class="skill">SpriteKit</div>
-        <div class="skill">Prototyping</div>
-        <div class="skill">Design Systems</div>
-        <div class="skill">Mobile UI</div>
-        <div class="skill">User Flows</div>
-      </div>
-    </section>
-
-    <section class="section-shell experience-section reveal">
-      <div class="experience-intro">
-        <p class="eyebrow"><span></span> EXPERIENCE</p>
-        <h2>From development<br />to design.</h2>
-        <p>My development background helps me understand how design works in a real product, from concept to implementation.</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2023 — Now</div>
-          <div class="timeline-dot"></div>
-          <div><h3>UI/UX Designer</h3><p>Designing mobile interfaces, user flows and design systems. Creating interactive prototypes and end-to-end product concepts.</p></div>
+      <section class="apps-section section" id="apps">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-i18n="appsEyebrow">BUILT & PUBLISHED</p><h2 data-i18n="appsTitle">Apps on the App Store.</h2></div>
+          <span class="section-index">02 / 03</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Previous</div>
-          <div class="timeline-dot"></div>
-          <div><h3>iOS Developer / App Creator</h3><p>Developed and released mobile applications on the App Store. Worked across product architecture, UI implementation, integrations and release.</p></div>
+        <p class="section-intro" data-i18n="appsIntro">I’ve independently developed and released three apps. Here are two projects with public App Store pages.</p>
+        <div class="app-grid">
+          <article class="app-card">
+            <div class="app-card-top">
+              <img class="app-icon" src="assets/crystal-icon.png" alt="Crystal Rush app icon">
+              <span class="app-label">iOS GAME</span>
+            </div>
+            <img class="app-screenshot crystal-shot" src="assets/crystal-rush.png" alt="Crystal Rush gameplay screens">
+            <div class="app-card-content">
+              <h3>Crystal Rush</h3>
+              <p data-i18n="crystalDesc">A match-3 puzzle game with levels, boosters and a fantasy-inspired visual world.</p>
+              <a class="button button-light app-link" href="https://apps.apple.com/ru/app/crystal-rush-%D1%82%D1%80%D0%B8-%D0%B2-%D1%80%D1%8F%D0%B4/id6761733530" target="_blank" rel="noopener noreferrer" data-i18n="appStore">View on App Store ↗</a>
+            </div>
+          </article>
+          <article class="app-card">
+            <div class="app-card-top">
+              <img class="app-icon wordout-icon" src="assets/wordout-icon.png" alt="Wordout app icon">
+              <span class="app-label">iOS GAME</span>
+            </div>
+            <img class="app-screenshot wordout-shot" src="assets/wordout-screens.png" alt="Wordout game screens">
+            <div class="app-card-content">
+              <h3>Wordout</h3>
+              <p data-i18n="wordoutDesc">A word game for friends and groups, designed for playful rounds and shared moments.</p>
+              <a class="button button-light app-link" href="https://apps.apple.com/ru/app/wordout-%D0%B8%D0%B3%D1%80%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9/id6754257992" target="_blank" rel="noopener noreferrer" data-i18n="appStore">View on App Store ↗</a>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
+        <p class="apps-footnote" data-i18n="appsFootnote">3 apps published · Only two are featured here for now.</p>
+      </section>
 
-    <section class="section-shell contact-section reveal" id="contact">
-      <div>
-        <p class="eyebrow"><span></span> CONTACT</p>
-        <h2>Let’s work<br />together.</h2>
-        <p>I’m open to new opportunities. Feel free to reach out — I’d love to hear from you.</p>
-      </div>
-      <div class="contact-actions">
-        <a class="contact-btn" href="mailto:YOUR_EMAIL@example.com">✉ Email</a>
-        <a class="contact-btn" id="linkedinLink" href="#" target="_blank" rel="noopener">in LinkedIn</a>
-        <a class="contact-btn" id="behanceFooterLink" href="#" target="_blank" rel="noopener">Bē Behance</a>
-        <a class="contact-btn" id="figmaFooterLink" href="#" target="_blank" rel="noopener">F Figma</a>
-        <a class="btn btn-dark" href="#contact">Download CV <span>↓</span></a>
-      </div>
-    </section>
-  </main>
+      <section class="about-section section" id="about">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-i18n="aboutEyebrow">A LITTLE ABOUT ME</p><h2 data-i18n="aboutTitle">Design meets development.</h2></div>
+          <span class="section-index">03 / 03</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-photo-wrap"><img src="assets/profile-bw.png" alt="Alex Mikeylov" class="about-photo"><span class="photo-caption" data-i18n="photoCaption">Curious by nature.</span></div>
+          <div class="about-content">
+            <p data-i18n="aboutP1"><strong>UI/UX designer with experience developing mobile apps in Swift.</strong> Before moving into design, I independently built and released apps on the App Store, so I understand the full mobile product cycle — from idea and architecture to implementation and release.</p>
+            <p data-i18n="aboutP2">I’ve worked with Swift, UIKit and SpriteKit, including architecture, interfaces, third-party SDKs, localization, optimization and bug fixing. I have experience working independently and in a small team.</p>
+            <p data-i18n="aboutP3">Now I’m growing in UI/UX design: creating mobile interfaces, user flows, design systems and interactive prototypes in Figma.</p>
+            <p data-i18n="aboutP4"><strong>My strength is the combination of design and technical experience:</strong> I understand not only how an interface should look, but also how it can be implemented in a real product.</p>
+            <div class="skills"><span>Figma</span><span>UI/UX</span><span>Prototyping</span><span>Design systems</span><span>Swift</span><span>UIKit</span><span>SpriteKit</span></div>
+          </div>
+        </div>
+      </section>
 
-  <footer class="footer section-shell">
-    <span>© <span id="year"></span> Alex</span>
-    <span>UI/UX Designer · iOS Background</span>
-  </footer>
+      <section class="contact-section section" id="contact">
+        <div class="contact-panel">
+          <div><p class="eyebrow" data-i18n="contactEyebrow">HAVE A PROJECT IN MIND?</p><h2 data-i18n="contactTitle">Let’s make something<br>meaningful.</h2><p data-i18n="contactText">I’m open to junior UI/UX opportunities and interesting collaborations.</p></div>
+          <div class="contact-links">
+            <a class="button button-white" href="mailto:swap110987@mial.ru">Email ↗</a>
+            <a class="button button-white" href="https://t.me/praidPOP" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+            <a class="button button-white" href="https://www.behance.net/ef557b14" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+            <a class="button button-white" href="https://www.figma.com/design/ulmsws2ACwXjXcL3pft9FH/NOMO-Desighn?node-id=0-1&t=H2uy1FE50mJ0ncRR-1" target="_blank" rel="noopener noreferrer">Figma ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <script src="script.js"></script>
+    <footer class="footer"><a class="wordmark" href="#top">Alex<span>.</span></a><span data-i18n="footerText">Designed & built with care · 2026</span><a href="#top" class="back-top" data-i18n="backTop">Back to top ↑</a></footer>
+  </div>
 </body>
 </html>

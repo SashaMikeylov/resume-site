@@ -1,34 +1,30 @@
-# Alex — UI/UX Portfolio
+# Alex Mikeylov — Portfolio website
 
-A lightweight static portfolio site built with plain HTML, CSS and JavaScript. It is ready for GitHub Pages.
+A responsive bilingual portfolio website (English by default, Russian toggle) built with plain HTML, CSS and JavaScript.
 
-## Files
+## Update on GitHub
+1. Keep your existing `assets` folder and its images.
+2. Replace `index.html`, `styles.css`, and `script.js` with the files from this package.
+3. Commit the changes to the `main` branch.
+4. GitHub Pages should redeploy automatically. Refresh the published site after a minute or two.
 
-- `index.html` — page structure and content
-- `styles.css` — responsive visual design
-- `script.js` — personal links and small interactions
-- `assets/` — provided portfolio images
+## Required existing image files
+The page references these paths inside `assets/`:
+- `profile-color.jpeg`
+- `profile-bw.png`
+- `nomo-case-study.png`
+- `crystal-icon.png`
+- `crystal-rush.png`
+- `wordout-icon.png`
+- `wordout-screens.png`
 
-## Before publishing
+Keep the filenames exactly as written, including capitalization. If your actual image names differ, rename them or update the corresponding `src` values in `index.html`.
 
-Open `script.js` and replace:
+## Links already connected
+- Behance: https://www.behance.net/ef557b14
+- Figma: https://www.figma.com/design/ulmsws2ACwXjXcL3pft9FH/NOMO-Desighn?node-id=0-1&t=H2uy1FE50mJ0ncRR-1
+- Telegram: https://t.me/praidPOP
+- Email: swap110987@mial.ru
+- Crystal Rush and Wordout App Store pages
 
-- `YOUR_BEHANCE_URL`
-- `YOUR_FIGMA_URL`
-- `YOUR_LINKEDIN_URL`
-
-If you have a PDF resume, add it to `assets/` as `resume.pdf` and change the CV buttons in `index.html` from `href="#contact"` to `href="assets/resume.pdf" download`.
-
-## App Store links already included
-
-- Wordout: https://apps.apple.com/ru/app/wordout-%D0%B8%D0%B3%D1%80%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9/id6754257992
-- Crystal Rush: https://apps.apple.com/ru/app/crystal-rush-%D1%82%D1%80%D0%B8-%D0%B2-%D1%80%D1%8F%D0%B4/id6761733530
-
-## GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload everything from this folder, keeping the `assets` folder.
-3. In the repository open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)`.
-6. Save. GitHub will generate the public site URL.
+The site states that 3 apps have been published, while featuring the two App Store links currently provided.
