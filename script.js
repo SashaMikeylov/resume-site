@@ -1,11 +1,12 @@
 const translations = {
   en: {
     navWork:"Work", navApps:"Apps", navAbout:"About", navContact:"Contact", letsTalk:"Let’s talk ↗",
-    heroEyebrow:"UI/UX DESIGNER · iOS DEVELOPER", heroTitle:"Designing meaningful<br>mobile experiences.",
+    heroEyebrow:"UI/UX DESIGNER · iOS DEVELOPER", heroTitle:"Designing <span class=\"title-accent\">meaningful</span><br>mobile experiences.",
     heroLead:"I’m a UI/UX designer with a background in iOS development. I turn complex ideas into clear, thoughtful and engaging digital products.",
     viewWork:"Explore my work ↘", emailMe:"Email me ↗", statApps:"Apps on App Store", statCase:"UI/UX case study", statDev:"iOS development",
     noteDesign:"Design<br>with purpose", noteBuild:"From idea<br>to product", heroLocation:"UI/UX · iOS",
     featuredEyebrow:"SELECTED WORK", featuredTitle:"Designing for real connections.",
+    projectKicker:"UI/UX · MOBILE APP · CONCEPT", tagProduct:"Product thinking", tagFlows:"User flows", tagSystem:"Design system", tagPrototype:"Prototype", appLabel:"iOS GAME", skillPrototype:"Prototyping", skillSystems:"Design systems",
     nomoDesc:"A social app concept that helps people discover local events, meet people with shared interests and make plans together.",
     viewCase:"View case study ↗", openFigma:"Open in Figma ↗", conceptProject:"Concept project ↗",
     appsEyebrow:"BUILT & PUBLISHED", appsTitle:"Apps on the App Store.",
@@ -23,11 +24,12 @@ const translations = {
   },
   ru: {
     navWork:"Проекты", navApps:"Приложения", navAbout:"Обо мне", navContact:"Контакты", letsTalk:"Связаться ↗",
-    heroEyebrow:"UI/UX-ДИЗАЙНЕР · iOS-РАЗРАБОТЧИК", heroTitle:"Создаю продуманные<br>мобильные интерфейсы.",
+    heroEyebrow:"UI/UX-ДИЗАЙНЕР · iOS-РАЗРАБОТЧИК", heroTitle:"Создаю <span class=\"title-accent\">продуманные</span><br>мобильные интерфейсы.",
     heroLead:"Я UI/UX-дизайнер с опытом iOS-разработки. Превращаю сложные идеи в понятные, продуманные и удобные цифровые продукты.",
     viewWork:"Мои проекты ↘", emailMe:"Написать мне ↗", statApps:"Приложения в App Store", statCase:"UI/UX-кейс", statDev:"iOS-разработка",
     noteDesign:"Дизайн<br>со смыслом", noteBuild:"От идеи<br>до продукта", heroLocation:"UI/UX · iOS",
     featuredEyebrow:"ИЗБРАННЫЕ ПРОЕКТЫ", featuredTitle:"Дизайн для настоящих знакомств.",
+    projectKicker:"UI/UX · МОБИЛЬНОЕ ПРИЛОЖЕНИЕ · КОНЦЕПТ", tagProduct:"Продуктовое мышление", tagFlows:"Пользовательские сценарии", tagSystem:"Дизайн-система", tagPrototype:"Прототип", appLabel:"ИГРА ДЛЯ iOS", skillPrototype:"Прототипирование", skillSystems:"Дизайн-системы",
     nomoDesc:"Концепт социального приложения, которое помогает находить события рядом, знакомиться с людьми по интересам и вместе планировать активности.",
     viewCase:"Смотреть кейс ↗", openFigma:"Открыть в Figma ↗", conceptProject:"Концепт-проект ↗",
     appsEyebrow:"РАЗРАБОТАНО И ОПУБЛИКОВАНО", appsTitle:"Приложения в App Store.",
@@ -44,7 +46,7 @@ const translations = {
     footerText:"Сделано с вниманием к деталям · 2026", backTop:"Наверх ↑"
   }
 };
-let currentLanguage = "en";
+let currentLanguage = "ru";
 const langButton = document.getElementById("languageToggle");
 function setLanguage(lang) {
   currentLanguage = lang;
@@ -54,11 +56,62 @@ function setLanguage(lang) {
     if (translations[lang][key]) element.innerHTML = translations[lang][key];
   });
   langButton.textContent = lang === "en" ? "RU" : "EN";
-  langButton.setAttribute("aria-label", lang === "en" ? "Switch to Russian" : "Switch to English");
+  langButton.setAttribute("aria-label", lang === "en" ? "Switch to Russian" : "Переключить на английский");
   try { localStorage.setItem("portfolio-language", lang); } catch (_) {}
 }
 langButton.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "ru" : "en"));
 try {
   const savedLanguage = localStorage.getItem("portfolio-language");
-  if (savedLanguage === "ru") setLanguage("ru");
-} catch (_) {}
+  setLanguage(savedLanguage === "en" ? "en" : "ru");
+} catch (_) { setLanguage("ru"); }
+
+const motionIsReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealTargets = document.querySelectorAll(
+  ".section-heading, .featured-card, .section-intro, .app-card, .apps-footnote, .about-grid, .contact-panel"
+);
+
+if (!motionIsReduced && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("motion-ready");
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: "0px 0px -38px 0px" });
+
+  revealTargets.forEach((element) => revealObserver.observe(element));
+}
+
+const progressBar = document.getElementById("readingProgress");
+let progressTicking = false;
+function updateReadingProgress() {
+  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = pageHeight > 0 ? window.scrollY / pageHeight : 0;
+  progressBar.style.width = `${Math.max(0, Math.min(progress, 1)) * 100}%`;
+  progressTicking = false;
+}
+window.addEventListener("scroll", () => {
+  if (!progressTicking) {
+    window.requestAnimationFrame(updateReadingProgress);
+    progressTicking = true;
+  }
+}, { passive: true });
+window.addEventListener("resize", updateReadingProgress, { passive: true });
+updateReadingProgress();
+
+const heroVisual = document.querySelector(".hero-visual");
+if (heroVisual && !motionIsReduced && window.matchMedia("(pointer: fine)").matches) {
+  heroVisual.addEventListener("pointermove", (event) => {
+    const bounds = heroVisual.getBoundingClientRect();
+    heroVisual.style.setProperty("--pointer-x", `${event.clientX - bounds.left}px`);
+    heroVisual.style.setProperty("--pointer-y", `${event.clientY - bounds.top}px`);
+  });
+  heroVisual.addEventListener("pointerleave", () => {
+    heroVisual.style.setProperty("--pointer-x", "50%");
+    heroVisual.style.setProperty("--pointer-y", "50%");
+  });
+}
+
+document.querySelector(".nav-links")?.setAttribute("aria-label", currentLanguage === "ru" ? "Основная навигация" : "Main navigation");
