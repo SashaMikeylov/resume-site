@@ -3,12 +3,17 @@ const translations = {
     navWork:"Work", navApps:"Apps", navAbout:"About", navContact:"Contact", letsTalk:"Let’s talk ↗",
     heroEyebrow:"UI/UX DESIGNER · iOS DEVELOPER", heroTitle:"Designing <span class=\"title-accent\">meaningful</span><br>mobile experiences.",
     heroLead:"I’m a UI/UX designer with a background in iOS development. I turn complex ideas into clear, thoughtful and engaging digital products.",
-    viewWork:"Explore my work ↘", emailMe:"Email me ↗", statApps:"Apps on App Store", statCase:"UI/UX case study", statDev:"iOS development",
+    viewWork:"Explore my work ↘", messageMe:"Message me on Telegram ↗", statApps:"Apps on App Store", statCase:"UI/UX projects", statDev:"iOS development",
     noteDesign:"Design<br>with purpose", noteBuild:"From idea<br>to product", heroLocation:"UI/UX · iOS",
-    featuredEyebrow:"SELECTED WORK", featuredTitle:"Designing for real connections.",
+    featuredEyebrow:"SELECTED WORK", featuredTitle:"Design that solves product challenges.", moreProjects:"MORE PROJECTS",
     projectKicker:"UI/UX · MOBILE APP · CONCEPT", tagProduct:"Product thinking", tagFlows:"User flows", tagSystem:"Design system", tagPrototype:"Prototype", appLabel:"iOS GAME", skillPrototype:"Prototyping", skillSystems:"Design systems",
     nomoDesc:"A social app concept that helps people discover local events, meet people with shared interests and make plans together.",
     viewCase:"View case study ↗", openFigma:"Open in Figma ↗", conceptProject:"Concept project ↗",
+    monoKicker:"ARCHITECTURE · INTERIORS", monoDesc:"A website for an architecture and interior studio, built around a warm visual identity, expressive typography and a clear presentation of its work.",
+    arvenKicker:"FRAGRANCE · E-COMMERCE", arvenDesc:"An e-commerce concept for a premium fragrance brand, with an atmospheric collection showcase and a thoughtful shopping journey.",
+    coinlyKicker:"FINTECH · SAVINGS", coinlyDesc:"A savings product landing page with clear benefit messaging, a visual card concept and a focus on easy-to-understand money management.",
+    bebsKicker:"BEBS · MOBILE APP", pinkBearDesc:"A mobile product built around playful levels and rewards, turning everyday actions into points, new ranks and bonuses.",
+    tagWeb:"Web design", tagEcommerce:"E-commerce", tagFintech:"Fintech", tagMobile:"Mobile design", tagRewards:"Gamification", designLink:"Figma design ↗", prototypeLink:"Prototype ↗",
     appsEyebrow:"BUILT & PUBLISHED", appsTitle:"Apps on the App Store.",
     appsIntro:"I’ve independently developed and released three apps. Here are two projects with public App Store pages.",
     crystalDesc:"A match-3 puzzle game with levels, boosters and a fantasy-inspired visual world.",
@@ -26,12 +31,17 @@ const translations = {
     navWork:"Проекты", navApps:"Приложения", navAbout:"Обо мне", navContact:"Контакты", letsTalk:"Связаться ↗",
     heroEyebrow:"UI/UX-ДИЗАЙНЕР · iOS-РАЗРАБОТЧИК", heroTitle:"Создаю <span class=\"title-accent\">продуманные</span><br>мобильные интерфейсы.",
     heroLead:"Я UI/UX-дизайнер с опытом iOS-разработки. Превращаю сложные идеи в понятные, продуманные и удобные цифровые продукты.",
-    viewWork:"Мои проекты ↘", emailMe:"Написать мне ↗", statApps:"Приложения в App Store", statCase:"UI/UX-кейс", statDev:"iOS-разработка",
+    viewWork:"Мои проекты ↘", messageMe:"Написать в Telegram ↗", statApps:"Приложения в App Store", statCase:"UI/UX-проектов", statDev:"iOS-разработка",
     noteDesign:"Дизайн<br>со смыслом", noteBuild:"От идеи<br>до продукта", heroLocation:"UI/UX · iOS",
-    featuredEyebrow:"ИЗБРАННЫЕ ПРОЕКТЫ", featuredTitle:"Дизайн для настоящих знакомств.",
+    featuredEyebrow:"ИЗБРАННЫЕ ПРОЕКТЫ", featuredTitle:"Дизайн, который решает задачи продукта.", moreProjects:"ЕЩЁ ПРОЕКТЫ",
     projectKicker:"UI/UX · МОБИЛЬНОЕ ПРИЛОЖЕНИЕ · КОНЦЕПТ", tagProduct:"Продуктовое мышление", tagFlows:"Пользовательские сценарии", tagSystem:"Дизайн-система", tagPrototype:"Прототип", appLabel:"ИГРА ДЛЯ iOS", skillPrototype:"Прототипирование", skillSystems:"Дизайн-системы",
     nomoDesc:"Концепт социального приложения, которое помогает находить события рядом, знакомиться с людьми по интересам и вместе планировать активности.",
     viewCase:"Смотреть кейс ↗", openFigma:"Открыть в Figma ↗", conceptProject:"Концепт-проект ↗",
+    monoKicker:"АРХИТЕКТУРА · ИНТЕРЬЕРЫ", monoDesc:"Сайт студии архитектуры и интерьеров: тёплая визуальная система, выразительная типографика и удобная подача проектов.",
+    arvenKicker:"ПАРФЮМЕРИЯ · E-COMMERCE", arvenDesc:"Концепция интернет-магазина премиальной парфюмерии с атмосферной подачей коллекции и продуманным пользовательским сценарием.",
+    coinlyKicker:"ФИНТЕХ · НАКОПЛЕНИЯ", coinlyDesc:"Лендинг накопительного продукта: понятная подача преимуществ, визуализация карты и акцент на простое управление сбережениями.",
+    bebsKicker:"BEBS · МОБИЛЬНОЕ ПРИЛОЖЕНИЕ", pinkBearDesc:"Мобильный продукт с игровой системой уровней и наград: повседневные действия превращаются в баллы, новые уровни и бонусы.",
+    tagWeb:"Веб-дизайн", tagEcommerce:"E-commerce", tagFintech:"Финтех", tagMobile:"Мобильный дизайн", tagRewards:"Геймификация", designLink:"Макет Figma ↗", prototypeLink:"Прототип ↗",
     appsEyebrow:"РАЗРАБОТАНО И ОПУБЛИКОВАНО", appsTitle:"Приложения в App Store.",
     appsIntro:"Я самостоятельно разработал и выпустил три приложения. Здесь представлены два проекта с открытыми страницами в App Store.",
     crystalDesc:"Головоломка «три в ряд» с уровнями, усилителями и фэнтезийным визуальным стилем.",
@@ -100,18 +110,5 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 window.addEventListener("resize", updateReadingProgress, { passive: true });
 updateReadingProgress();
-
-const heroVisual = document.querySelector(".hero-visual");
-if (heroVisual && !motionIsReduced && window.matchMedia("(pointer: fine)").matches) {
-  heroVisual.addEventListener("pointermove", (event) => {
-    const bounds = heroVisual.getBoundingClientRect();
-    heroVisual.style.setProperty("--pointer-x", `${event.clientX - bounds.left}px`);
-    heroVisual.style.setProperty("--pointer-y", `${event.clientY - bounds.top}px`);
-  });
-  heroVisual.addEventListener("pointerleave", () => {
-    heroVisual.style.setProperty("--pointer-x", "50%");
-    heroVisual.style.setProperty("--pointer-y", "50%");
-  });
-}
 
 document.querySelector(".nav-links")?.setAttribute("aria-label", currentLanguage === "ru" ? "Основная навигация" : "Main navigation");
